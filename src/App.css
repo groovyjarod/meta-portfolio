@@ -1,3 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+section {
+  width: 100%;
+}
+
+h1, h2, h3 {
+  font-family: 'Markazi Text', serif;
+}
+
+h1 {
+  font-size: 60pt;
+  color: #f4ce14;
+  line-height: 24pt;
+}
+
+h2 {
+  font-size: 36pt;
+  color: white;
+}
+
+h4, p, span, a {
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}
+
+.headerImg {
+  transform: translateY(64px)
+}
+
+.price {
+  color: "#ee9972";
+}
+
+.landing-btn {
+  background-color: #495e57;
+}
+
 .App {
   display: flex;
   flex-direction: column;
@@ -8,7 +60,11 @@
 
 nav {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 .App-logo {
   height: 40vmin;

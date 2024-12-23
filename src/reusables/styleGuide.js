@@ -1,0 +1,6 @@
+export const primary = "#495e57"
+export const secondary = "#f4ce14"
+export const tertiary1 = "#ee9972"
+export const tertiary2 = "#fbdabb"
+export const tertiary3 = "#edefee"
+export const tertiary4 = "#333333"
