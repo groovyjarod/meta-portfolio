@@ -16,6 +16,6 @@ Instructions for running this project (for non-programmers):
 - type 'git clone <url>' and hit enter
 - type cd meta-portfolio and hit enter
 - type npm install and hit enter. Wait for everything to install.
-- type npm start and the application will start.
+- type npm start and hit enter. The application should start.
 
   Have fun!
