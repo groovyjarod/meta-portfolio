@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import {
   Box,
   Button,
-  Heading,
   Select,
   VStack,
   Spinner,
@@ -12,9 +11,8 @@ import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
-  FormErrorIcon,
 } from "@chakra-ui/react";
+import css from '../BookingForm.css'
 
 const formStyle = {
   display: "grid",
@@ -22,21 +20,9 @@ const formStyle = {
   gap: "20px",
 };
 
-const formItem = {
-  border: "1px solid black",
-  borderRadius: "4px",
-};
-
 const BookingForm = ({
-  date,
   setDate,
-  time,
-  setTime,
-  numGuests,
-  setNumGuests,
   availableTimes,
-  occasion,
-  setOccasion,
   isLoading,
   setIsLoading,
   handleFormSubmit,
@@ -58,8 +44,8 @@ const BookingForm = ({
     onSubmit: (values) => {
       setIsLoading(prev => !prev)
       setTimeout(() => {
-        console.log(values)
         setIsLoading(prev => !prev)
+        handleFormSubmit(values)
       }, 1000);
     //   handleFormSubmit(values)
     },
@@ -79,13 +65,13 @@ const BookingForm = ({
 
   return (
     <VStack>
-      <Heading as="h1">Reserve a Table</Heading>
       <Box p={6} rounded="md" w="100%">
         <form style={formStyle} onSubmit={handleSubmit}>
-          <VStack spacing={4}>
+          <VStack gap="24px">
             <FormControl isInvalid={errors.date && touched.date}>
-              <FormLabel htmlFor="date">Date</FormLabel>
+              <FormLabel className="form-control-label" htmlFor="date">Date</FormLabel>
               <Input
+                width="350px"
                 name="date"
                 type="date"
                 id="res-date"
@@ -97,7 +83,7 @@ const BookingForm = ({
             </FormControl>
 
             <FormControl isInvalid={errors.time && touched.time}>
-              <FormLabel htmlFor="time">Time</FormLabel>
+              <FormLabel className="form-control-label" htmlFor="time">Time</FormLabel>
               <Select
                 id="res-time"
                 name="time"
@@ -118,7 +104,7 @@ const BookingForm = ({
             </FormControl>
 
             <FormControl isInvalid={errors.numGuests && touched.numGuests}>
-              <FormLabel htmlFor="numGuests">Number of Guests</FormLabel>
+              <FormLabel className="form-control-label" htmlFor="numGuests">Number of Guests</FormLabel>
               <Input
                 name="numGuests"
                 type="number"
@@ -132,7 +118,7 @@ const BookingForm = ({
             </FormControl>
 
             <FormControl isInvalid={errors.occasion && touched.occasion}>
-              <FormLabel htmlFor="occasion">Occasion</FormLabel>
+              <FormLabel className="form-control-label" htmlFor="occasion">Occasion</FormLabel>
               <Select
                 name="occasion"
                 onChange={handleChange}
@@ -146,7 +132,7 @@ const BookingForm = ({
               <FormErrorMessage>Please select an occasion.</FormErrorMessage>
             </FormControl>
 
-            <Button aria-label="On Click" type="submit" isDisabled={ !values.date || !values.numGuests || !values.time || !values.occasion || isLoading }>
+            <Button width="100%" aria-label="On Click" type="submit" isDisabled={ !values.date || !values.numGuests || !values.time || !values.occasion || isLoading }>
               {isLoading ? <Spinner /> : "Submit"}
             </Button>
           </VStack>

@@ -1,0 +1,25 @@
+.booking-photo-container {
+    height: 100%;
+    width: 500px;
+    position: relative;
+}
+
+.photo1, .photo2 {
+    height: 32vh;
+    width: 400px;
+    object-fit: cover;
+    position: absolute;
+    border: 5px solid #495e57;
+    border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 8px 16px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.photo1 {
+    top: -288px;
+    left: 128px;
+}
+
+.photo2 {
+    top: -88px;
+    left: -64px;
+}
