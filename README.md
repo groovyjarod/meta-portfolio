@@ -11,4 +11,11 @@ Thank you for taking a look at my Capstone Project. Contained in this project is
 - Numerous other dependencies located within the project that can be viewed from package.json.
 
 Instructions for running this project (for non-programmers):
-- 
+- Click the Green Code button on the page, and copy the link provided.
+- In your terminal, navigate to a folder with empty contents.
+- type 'git clone <url>' and hit enter
+- type cd meta-portfolio and hit enter
+- type npm install and hit enter. Wait for everything to install.
+- type npm start and the application will start.
+
+  Have fun!
