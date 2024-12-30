@@ -1,24 +1,38 @@
 import React from "react";
 import logo from "../assets/Logo.svg";
 import { Link } from "react-router";
-import { HStack } from "@chakra-ui/react";
+import { HStack, Image, Box } from "@chakra-ui/react";
+import { useWindowSize } from "react-use";
+import hambuger from '../assets/🦆 icon _hamburger menu.svg'
 
 const Nav = () => {
+  const { width } = useWindowSize()
   return (
-    <nav>
-        <HStack minW="900px" maxW="1000px" paddingTop="16px" paddingBottom="16px" justifyContent="space-evenly">
+    <>
+    {width > 800 ? (
+      <nav>
+        <HStack width="100%" maxW="1000px" paddingTop="16px" paddingBottom="16px" justifyContent="space-evenly">
             <Link to="/">
                 <img src={logo} alt="Little Lemon Logo" />
             </Link>
             <Link to="/" className="black">Home</Link>
             <Link to="/about" className="black">About</Link>
             <Link to="/booking" className="black">Book A Table</Link>
-            {/* <Link to="/menu">Menu</Link>
-            <Link to="/reservations">Reservations</Link>
-            <Link to="/order-online">Order Online</Link>
-            <Link to="/login">Login</Link> */}
         </HStack>
-    </nav>
+      </nav>
+    ) : (
+      <nav>
+        <HStack width="100%" padding="16px" justifyContent="space-between">
+        <Link to="/">
+          <img src={logo} alt="Little Lemon Logo" />
+        </Link>
+        <Box boxSize="30px" onClick={console.log('clicked')}>
+          <Image src={hambuger} boxSize="30px" />
+        </Box>
+        </HStack>
+      </nav>
+    )}
+    </>
   );
 };
 

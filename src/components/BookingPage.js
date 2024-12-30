@@ -2,6 +2,7 @@ import React, { useState, useEffect, useReducer } from "react";
 import { useNavigate } from "react-router";
 import { Stack, VStack, HStack, Image } from "@chakra-ui/react";
 import { fetchAPI, submitAPI } from "../reusables/API";
+import { useWindowSize } from "react-use";
 import BookingForm from "./BookingForm";
 import { primary } from "../reusables/styleGuide";
 import photo1 from '../assets/restaurant.jpg'
@@ -20,6 +21,8 @@ const BookingPage = () => {
   const [date, setDate] = useState(getTodaysDate());
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { width } = useWindowSize()
+
 
   const handleFormSubmit = (data) => {
     const check = submitAPI(data);
@@ -84,14 +87,23 @@ const BookingPage = () => {
         <h1>Reserve a Table</h1>
       </Stack>
       <VStack width="100vw" justifyContent="center">
-        <Stack height="64px"></Stack>
-        <HStack justifyContent="space-between" width="100%" maxW="1050px" alignItems="center">
-          <BookingForm {...bookingProps} />
-          <VStack className="booking-photo-container" maxW="50%">
-            <Image src={photo1} className="photo1" />
-            <Image src={photo2} className="photo2" />
+        {width > 1150 ? (
+          <>
+          <Stack height="64px"></Stack>
+          <HStack justifyContent="space-between" width="100%" maxW="1050px" alignItems="center">
+            <BookingForm {...bookingProps} />
+            <VStack className="booking-photo-container" maxW="50%">
+              <Image src={photo1} className="photo1" />
+              <Image src={photo2} className="photo2" />
+            </VStack>
+          </HStack>
+          <Stack height="64px"></Stack>
+          </>
+        ) : (
+          <VStack justifyContent="center" height="100%" alignItems="center" width="400px">
+            <BookingForm {...bookingProps} />
           </VStack>
-        </HStack>
+        )}
 
       </VStack>
     </>

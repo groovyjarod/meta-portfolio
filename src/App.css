@@ -46,6 +46,10 @@ p {
   font-weight: 500;
 }
 
+.booking-input {
+  border: 3px solid #495e57;
+}
+
 .white {
   color: #edefee;
 }
@@ -55,7 +59,7 @@ p {
 }
 
 .headerImg {
-  transform: translateY(64px)
+  transform: translateY(82px)
 }
 
 .price {

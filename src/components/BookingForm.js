@@ -64,13 +64,14 @@ const BookingForm = ({
   }, [values.date])
 
   return (
-    <VStack>
-      <Box p={6} rounded="md" w="100%">
+    <VStack width="100%">
+      <Box p={6} rounded="md" width="100%">
         <form style={formStyle} onSubmit={handleSubmit}>
           <VStack gap="24px">
             <FormControl isInvalid={errors.date && touched.date}>
               <FormLabel className="form-control-label" htmlFor="date">Date</FormLabel>
               <Input
+                border="2px solid #495e57"
                 width="350px"
                 name="date"
                 type="date"
@@ -85,6 +86,7 @@ const BookingForm = ({
             <FormControl isInvalid={errors.time && touched.time}>
               <FormLabel className="form-control-label" htmlFor="time">Time</FormLabel>
               <Select
+                border="2px solid #495e57"
                 id="res-time"
                 name="time"
                 value={values.time}
@@ -106,6 +108,7 @@ const BookingForm = ({
             <FormControl isInvalid={errors.numGuests && touched.numGuests}>
               <FormLabel className="form-control-label" htmlFor="numGuests">Number of Guests</FormLabel>
               <Input
+                border="2px solid #495e57"
                 name="numGuests"
                 type="number"
                 value={values.numGuests}
@@ -120,6 +123,7 @@ const BookingForm = ({
             <FormControl isInvalid={errors.occasion && touched.occasion}>
               <FormLabel className="form-control-label" htmlFor="occasion">Occasion</FormLabel>
               <Select
+                border="2px solid #495e57"
                 name="occasion"
                 onChange={handleChange}
                 value={values.occasion}

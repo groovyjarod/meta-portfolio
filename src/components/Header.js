@@ -3,8 +3,10 @@ import { Link } from "react-router";
 import headerPic from "../assets/restauranfood.jpg";
 import { VStack, HStack, Stack, Box, Image, Button } from "@chakra-ui/react";
 import { primary, secondary } from "../reusables/styleGuide";
+import { PiX } from "react-icons/pi";
 
 const Header = () => {
+  const BOX_SIZE = "420px"
   return (
     <>
       <VStack width="100vw" backgroundColor={primary}>
@@ -27,6 +29,7 @@ const Header = () => {
               We are a family owned Mediterranean restaurant, focused on
               traditional recipes served with a modern twist.
             </span>
+            <p></p>
             <br />
             <Link to="/booking">
               <Button
@@ -43,12 +46,12 @@ const Header = () => {
           <Box
             backgroundColor="#ffffff"
             borderRadius="24px"
-            height="380px"
-            width="380px"
+            height={BOX_SIZE}
+            width={BOX_SIZE}
             className="headerImg"
           >
             <Image
-              boxSize="380px"
+              boxSize={BOX_SIZE}
               src={headerPic}
               borderRadius="24px"
               boxShadow="rgba(0, 0, 0, 0.16) 0px 3px 5px, rgba(0, 0, 0, 0.23) 0px 3px 5px;"
